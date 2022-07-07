@@ -1,0 +1,78 @@
+server:
+  port: 8087
+  
+spring:
+  application:
+    name:   PUBGAPIGATEWAY
+  cloud:
+    gateway:
+      routes:
+      - id:  FAVOURITEMATCHES
+        uri:  lb://FAVOURITEMATCHES
+        predicates:
+        - Path=/favouritematches/**
+      - id:   MATCHESLIST
+        uri:  lb://MATCHESLIST
+        predicates:
+        - Path=/matcheslist/**
+      - id:   PLAYERSLIST
+        uri:  lb://PLAYERSLIST
+        predicates:
+        - Path=/playerslist/**
+      - id:   RECOMMENDATIONLISTSERVICE
+        uri:  lb://RECOMMENDATIONLISTSERVICE
+        predicates:
+        - Path=/recommendationlistservice/**
+      - id:   TOURNAMENTLIST
+        uri:  lb://TOURNAMENTLIST
+        predicates:
+        - Path=/tournamentlist/**
+      - id:   USERSERVICE
+        uri:  lb://USERSERVICE
+        predicates:
+        - Path=/userservice/**
+        
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8080/eureka
+  instance:
+    hostname: localhost
+#    cloud:
+#    gateway:
+#      routes:
+#      - id:  FAVOURITEMATCHES
+#        uri:  lb://FAVOURITEMATCHES
+#        predicates:
+#        - Path=/favouritematches/**
+#      - id:   MATCHESLIST
+#        uri:  lb://MATCHESLIST
+#        predicates:
+#        - Path=/matcheslist/**
+#      - id:   PLAYERSLIST
+#        uri:  lb://PLAYERSLIST
+#        predicates:
+#        - Path=/playerslist/**
+#      - id:   RECOMMENDATIONLISTSERVICE
+#        uri:  lb://RECOMMENDATIONLISTSERVICE
+#        predicates:
+#        - Path=/recommendationlistservice/**
+#      - id:   TOURNAMENTLIST
+#        uri:  lb://TOURNAMENTLIST
+#        predicates:
+#        - Path=/tournamentlist/**
+#      - id:   USERSERVICE
+#        uri:  lb://USERSERVICE
+#        predicates:
+#        - Path=/userservice/**
+#        
+#eureka:
+#   client:
+#    register-with-eureka: true
+#    fetch-registry: true    
+#    service-url:      
+#      defaultZone: http://localhost:8080/eureka
+#   instance:
+#    hostname: localhost

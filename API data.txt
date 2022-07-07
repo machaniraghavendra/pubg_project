@@ -1,0 +1,138 @@
+Tournament list data;
+http://localhost:8081/tournamentlist/
+
+// {
+//     "tournamentId":"1",
+//     "tournamentName":"PUBG Mobile Pro League Arabia Fall 2022",
+//     "tournamentDate":"20.06.22 - 23.07.22",
+//     "tournamentPeriod":"2",
+//     "tournamentStatus":"Active",
+//     "hoursWatched":"192 294"
+// }
+
+// {
+//     "tournamentId":"2",
+//     "tournamentName":"PMCO South America Spring 2022",
+//     "tournamentDate":"03.06.22 - 27.06.22",
+//     "tournamentPeriod":"5",
+//     "tournamentStatus":"Active",
+//     "hoursWatched":"42 770"
+// }
+
+
+// {
+//     "tournamentId":"3",
+//     "tournamentName":"PMCO Middle East Spring 2022",
+//         "tournamentDate":"14.06.22 - 19.06.22",
+//     "tournamentPeriod":"2",
+//     "tournamentStatus":"Not in active",
+//     "hoursWatched":"3 350"
+// }
+// {
+//     "tournamentId":"4",
+//     "tournamentName":"New Livik & Streamer Tournament",
+//     "tournamentDate":"18.06.22 - 19.06.22",
+//     "tournamentPeriod":"2",
+//     "tournamentStatus":"Not in active",
+//     "hoursWatched":"214 212"
+// }
+
+
+// {
+//     "tournamentId":"5",
+//     "tournamentName":"WEGL Weibo Cup 2022",
+//     "tournamentDate":"05.06.22 - 14.06.22",
+//     "tournamentPeriod":"3",
+//     "tournamentStatus":"Not in active",
+//     "hoursWatched":"-"
+// }
+
+
+// {
+//     "tournamentId":"6",
+//     "tournamentName":"PMCO Europe Spring 2022",
+//     "tournamentDate":"12.06.22 - 13.06.22",
+//     "tournamentPeriod":"5",
+//     "tournamentStatus":"Not in active",
+//     "hoursWatched":"9 873"
+// }
+
+--------------------------------------------------------------------------------------
+
+Match List data;
+http://localhost:8082/matcheslist/
+
+// {
+//     "matchId":"PGk1",
+//     "matchName":"Classic",
+//     "matchType":"Players practise",
+//     "playersCount":"100",
+//     "matchTime":"30 minutes"
+// }
+
+// {
+//     "matchId":"PGk2",
+//     "matchName":"Battle-royal",
+//     "matchType":"Oppnent Challenging",
+//     "playersCount":"50",
+//     "matchTime":"30 minutes"
+// }
+// {
+//     "matchId":"PGk3",
+//     "matchName":"Clash-Squad Ranked",
+//     "matchType":"Challenging",
+//     "playersCount":"50",
+//     "matchTime":"20 minutes"
+// }
+// {
+//     "matchId":"PGk4",
+//     "matchName":"Clash-Squad",
+//     "matchType":"Weapons fulled",
+//     "playersCount":"2 teams",
+//     "matchTime":"20 minutes"
+// }
+
+---------------------------------------------------------------
+Player's List;
+http://localhost:8085/playerslist/
+
+
+
+// {
+//     "id":1,
+//     "name":"Sara",
+//     "skill":"Only effective in Evo Ground",
+//     "strength":"Vehicle Enhancement level 1",
+//     "amount":600
+// }
+// {
+//     "id":2,
+//     "name":"ANDY",
+//     "skill":"Only effective in Evo Ground",
+//     "strength":"Andy is an expert in weapons",
+//     "amount":1200
+// }
+// {
+//     "id":3,
+//     "name":"VICTOR",
+//     "skill":" At level 9, reload time is reduced by up to 10%",
+//     "strength":"4 percent on the reload speed of submachine guns (SMG)",
+//     "amount":1000
+// }
+
+// {
+//     "id":4,
+//     "name":"CARLO",
+//     "skill":"Only effective in Evo Ground",
+//     "strength":" He reduces fall damage taken by up to 24%",
+//     "amount":1200
+// }
+
+// {
+//     "id":5,
+//     "name":"ANNA",
+//     "skill":"He is an expert in researching and finding the pieces",
+//     "strength":" He reduces fall damage taken by up to 24%",
+//     "amount":600
+// }
+
