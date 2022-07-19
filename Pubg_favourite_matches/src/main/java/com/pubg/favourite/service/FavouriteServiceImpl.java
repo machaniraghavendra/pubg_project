@@ -52,7 +52,7 @@ public class FavouriteServiceImpl implements FavouriteService{
 				throw new FavouriteMatchAlreadyAddedException("The Match already added in favourite list");
 			else {
 				FavouriteMatches save=frepo.save(fmatches);
-				return "Added to favourite list";
+				return "Added to favourite list 🙂";
 			}
 		} catch (FavouriteMatchAlreadyAddedException e) {
 			e.printStackTrace();
@@ -73,7 +73,7 @@ public class FavouriteServiceImpl implements FavouriteService{
 				throw new FavouriteMatchNotAddedYetException("Match not found in favourites list");
 			else {
 				frepo.deleteById(id);
-				return "Removed from favourite list";
+				return "Removed from favourite list ☹️";
 			}
 		} catch (FavouriteMatchNotAddedYetException e) {
 			e.printStackTrace();

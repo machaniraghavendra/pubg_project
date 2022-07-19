@@ -13,10 +13,13 @@ function Login() {
             .then((res) => {
                 setFormValues(res);
                 if (res.data == true) {
-                    nav("/pubg")
+                    {localStorage.setItem("Raghu","raghu")};
+                    if(localStorage.getItem("Raghu"))
+                    {
+                    nav("/pubg");
+                    }
                 }
             }).catch(
-
                 nav("/login")
             );
     }
@@ -98,11 +101,11 @@ function Login() {
                         <div className="d-flex justify-content-center text-center mt-4 pt-1">
                             <a href="https://www.facebook.com/login/" className="text-white"><i className="fab fa-facebook-f fa-lg"></i></a>
                             <a href="https://twitter.com/i/flow/login" className="text-white"><i className="fab fa-twitter fa-lg mx-4 px-2"></i></a>
-                            <a href="https://accounts.google.com/signin/v2/identifier?service=accountsettings&continue=https%3A%2F%2Fmyaccount.google.com%2F%3Futm_source%3Dsign_in_no_continue%26pli%3D1&ec=GAlAwAE&flowName=GlifWebSignIn&flowEntry=AddSession" class="text-white"><i class="fab fa-google fa-lg"></i></a>
+                            <a href="https://accounts.google.com/signin/v2/identifier?service=accountsettings&continue=https%3A%2F%2Fmyaccount.google.com%2F%3Futm_source%3Dsign_in_no_continue%26pli%3D1&ec=GAlAwAE&flowName=GlifWebSignIn&flowEntry=AddSession" className="text-white"><i className="fab fa-google fa-lg"></i></a>
                         </div><br></br>
 
                         <span>Don't have account? </span><Link to="/signup" style={{ textDecoration: "none", color: "yellow" }}> Sign up here </Link>
-                        <button className="btn btnms button btn-success">Login</button>
+                        <button className="btn btnms button btn-success" onClick={localStorage.getItem("Raghu")}>Login</button>
                     </div>
                 </form>
             </div>

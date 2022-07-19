@@ -3,6 +3,8 @@ body {
   background-color: black;
   background-repeat: no-repeat;
   background-size: 100%;
+  margin: 0%;
+  padding: 0%;
 }
 
 /* Home CSS */
@@ -54,6 +56,11 @@ body {
   margin-top: -8%;
   margin-left: 20%;
   font-family: monospace;
+}
+
+.info {
+  color: white;
+
 }
 
 /* Characters Css */
@@ -382,27 +389,41 @@ th {
 
 @keyframes popup {
   0% {
-    transform: translateX(1000%);
+    transform: translateY(10%);
+    top: 8%;
+    transition: 0.5s;
   }
 
   100% {
     transform: translateX(0%);
+    top: 15%;
+    transition: 0.5s;
   }
 }
 
 .Popup {
-  animation: popup 0.2s ease-in-out 0s 1;
+  animation: popup 0.5s 1;
+  animation-direction: alternate;
   width: 50%;
   height: 30%;
+  top: 15%;
+  margin: 0%;
+  padding: 0%;
+  justify-content: center;
   position: fixed;
-  color: white;
-  background: linear-gradient( blue,rgb(26, 27, 46));
+  color: rgb(255, 255, 255);
+  background-image: url("https://wallpapercave.com/wp/wp3114902.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   display: flex;
-  margin-left: 25%;
-  margin-top: 3%;
+  margin-left: 22%;
   z-index: 99;
+  border: 5px solid rgb(0, 0, 0);
   border-radius: 20px;
-  box-shadow: 0px 0px 15px 2px rgb(92, 91, 91);
+  box-shadow: 0px 0px 25px 2px rgb(92, 91, 91),
+    0px 0px 25px 2px rgb(70, 25, 69);
+
 }
 
 .option {
@@ -411,9 +432,11 @@ th {
   display: flex;
   margin-top: 120px;
 }
-.yes:hover{
-  box-shadow: 0px 0px 15px 2px rgb(225, 21, 10);
+
+.yes:hover {
+  box-shadow: 0px 0px 13px 2px rgb(60, 225, 10);
 }
+
 .yes {
   margin-left: 20px;
   border-radius: 5px;
@@ -531,6 +554,50 @@ pre {
   }
 }
 
+@keyframes popup-start {
+  0% {
+    top: 6%;
+    transition: 0.5s;
+  }
+
+  100% {
+    top: 10%;
+    transition: 0.5s;
+  }
+}
+
+.actives {
+  filter: blur(10px);
+  pointer-events: none;
+  user-select: none;
+}
+
+.Popup-start {
+  animation: popup-start 0.1s linear 0s 5;
+  animation-direction: alternate;
+  width: 50%;
+  height: 30%;
+  transition: 0.5s;
+  top: 10%;
+  margin: 0%;
+  padding: 0%;
+  justify-content: center;
+  position: fixed;
+  color: white;
+  /* background: linear-gradient(blue, rgb(26, 27, 46)); */
+  display: flex;
+  background-image: url("https://wallpapercave.com/wp/wp3114902.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 22%;
+  z-index: 99;
+  border: 2px solid rgb(48, 223, 238);
+  border-radius: 20px;
+  box-shadow: 0px 0px 25px 2px rgb(92, 91, 91),
+    0px 0px 25px 2px rgb(70, 25, 69);
+}
+
 .formani {
   animation: 1.5s ease-out 0s 1 form;
 }
@@ -586,4 +653,66 @@ pre {
   margin-left: 3%;
   width: 50%;
   color: white;
+}
+
+.bi-person-circle1 {
+  margin-left: 40%;
+  position: absolute;
+  color: #fff;
+}
+
+.bi-person-circle1:hover {
+  height: 27%;
+  transition: 1s;
+}
+
+.Avatar {
+  color: #fff;
+}
+
+.sizeprofile {
+  width: 30px;
+  position: relative;
+}
+
+.image {
+  height: 35%;
+  width: 17%;
+  border-radius: 50%;
+  margin-left: 40%;
+  position: absolute;
+
+}
+
+.image:hover {
+  transition: 0.5s;
+  box-shadow: 0px 0px 10px 5px yellow;
+  border: 5px solid black;
+}
+
+.but-active {
+  margin-left: 20px;
+}
+
+@keyframes show {
+  0% {
+    top: 3px;
+    transition: 1s;
+  }
+
+  100% {
+    transition: 1s;
+    top: 7px;
+  }
+}
+
+.arrowdown {
+  animation: show 0.3s linear 0s infinite;
+  animation-direction: alternate;
+  top: 7px;
+  position: relative;
+}
+
+.arrowdownh2 {
+  font-size: 70px;
 }

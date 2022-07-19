@@ -34,10 +34,10 @@ public class UserServiceImpl implements UserService{
 				{
 					return "Password required";
 				}else {
-					userdetails.setPassword(passwordEncoder.encode(userdetails.getPassword()));
+					userdetails.setPassword(passwordEncoder.encode(userdetails.getPassword()).replace('/',','));
 					
 					userrepo.save(userdetails);
-					return "User saved ";
+					return "Signed successfully ! 🙂";
 				}
 			}
 		} catch (UserAlreadyExistsException e) {
@@ -60,6 +60,14 @@ public class UserServiceImpl implements UserService{
 				{
 					return "The mobile number not to be null!";
 				}
+				if(!userdetails.getMobileNumber() .matches("^[0-9]+$"))
+				{
+					return "The mobile number must be digits";
+				}
+				if(userdetails.getMobileNumber().length()>10||userdetails.getMobileNumber().length()<10)
+				{
+					return "Enter valid mobile number";
+				}
 				if(userdetails.getUserName()=="")
 				{
 					return "The user name not to be null!";
@@ -68,13 +76,14 @@ public class UserServiceImpl implements UserService{
 				{
 					return "The password must be greater than 4 characters!";
 				}
-				if(userdetails.getPassword().length()>10)
-				{
-					return "The password must be less than 10 characters!";
-				}
+//				if(userdetails.getPassword().length()>10)
+//				{
+//					return "The password must be less than 10 characters!";
+//				}
 				else {
+					userdetails.setPassword(passwordEncoder.encode(userdetails.getPassword()).replace('/',','));
 					userrepo.save(userdetails);
-					return "Updated successfully :-)";
+					return "Updated successfully 🙂";
 				}
 			}
 		} catch (UserNotFoundException e) {
@@ -121,11 +130,23 @@ public class UserServiceImpl implements UserService{
 		if(userrepo.existsById(userEmail))
 		{
 			user=userrepo.findById(userEmail).get();
-			if(password.equals(user.getPassword()))
+			if(passwordEncoder.matches(password, user.getPassword().replace(',','/')))
 			{
 				return true;
 			}
 		}
 		return false;
+	}
+	public boolean checkpass(String password,String encodepass)
+	{
+		UserDetails user =new UserDetails();
+		if(passwordEncoder.matches(password,encodepass.replace(',', '/'))||password.equals(encodepass))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 }

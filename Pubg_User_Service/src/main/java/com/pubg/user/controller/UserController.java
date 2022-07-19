@@ -69,4 +69,10 @@ public class UserController
 	{
 			return userserviceimpl.check(mail, password);
 	}
+	
+	@GetMapping("/pass/{password}/{encodepass}")
+	public boolean checkpass(@PathVariable String password,@PathVariable String encodepass)
+	{
+			return userserviceimpl.checkpass( password, encodepass);
+	}
 }

@@ -9,6 +9,7 @@ export function Recommendation()
         axios.get("http://localhost:8085/playerslist/").then((response)=>{setList(response.data)});
     }
     useEffect(()=>{getCharacters();},[]);
+    if(localStorage.getItem("Raghu")){
     return(
         <div >
             <Home/>
@@ -82,4 +83,5 @@ export function Recommendation()
             </div>
         </div>
     )
+}
 }

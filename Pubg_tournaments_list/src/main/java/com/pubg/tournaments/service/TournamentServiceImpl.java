@@ -1,6 +1,8 @@
 package com.pubg.tournaments.service;
 
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -59,7 +61,7 @@ public class TournamentServiceImpl implements TournamentService
 	}
 
 	@Override
-	public Tournaments findById(String tournamentId) throws TournamentNotFoundException {
+	public Optional<String> findById(String tournamentId) throws TournamentNotFoundException {
 		Tournaments tournaments=new Tournaments();
 		try 
 		{
@@ -67,15 +69,14 @@ public class TournamentServiceImpl implements TournamentService
 			{
 				throw new TournamentNotFoundException("The Tournament with  "+tournaments.getTournamentId()+" not exists.");
 			}
-			else
-			{
-				return tournamentRepo.findById(tournamentId).get();
-			}
 		} 
 		catch (TournamentNotFoundException e) {
 			e.printStackTrace();
 		}
-		return tournaments;
+		return tournamentRepo.findById(tournamentId)
+				.map(Tournaments::toString)
+				.map(Optional::of)
+				.orElseThrow(()-> new TournamentNotFoundException("The Tournament with  "+tournaments.getTournamentId()+" not exists."));
 	}
 
 	@Override

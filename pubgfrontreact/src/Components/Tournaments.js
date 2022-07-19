@@ -13,6 +13,7 @@ export function Tournaments() {
     const [search, setSearch] = useState("");
 
     useEffect(() => { getTournaments(); }, []);
+    if(localStorage.getItem("Raghu")){
     return (
         <div >
             <Home />
@@ -96,4 +97,4 @@ export function Tournaments() {
         </div>
     )
 }
-
+}

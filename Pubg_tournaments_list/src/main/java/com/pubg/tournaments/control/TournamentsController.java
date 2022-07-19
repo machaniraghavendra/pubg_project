@@ -1,6 +1,7 @@
 package com.pubg.tournaments.control;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -43,10 +44,10 @@ public class TournamentsController
 	
 	@CrossOrigin(origins ="*",allowedHeaders = "*")
 	@GetMapping("/id/{id}")		//working
-	public ResponseEntity<Tournaments> findbyid(@PathVariable String id) throws TournamentNotFoundException
+	public ResponseEntity<Optional<String>> findbyid(@PathVariable String id) throws TournamentNotFoundException
 	{
-		Tournaments tournamentfindbyid=tournamentser.findById(id);
-		return new ResponseEntity<Tournaments>(tournamentfindbyid,HttpStatus.OK);
+		Optional<String> tournamentfindbyid=tournamentser.findById(id);
+		return new ResponseEntity<Optional<String>>(tournamentfindbyid,HttpStatus.OK);
 	}
 	
 	@GetMapping("/")			//working

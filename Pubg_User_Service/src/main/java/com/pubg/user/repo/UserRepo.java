@@ -11,4 +11,5 @@ import com.pubg.user.entity.UserDetails;
 public interface UserRepo extends JpaRepository<UserDetails,String>{
 	boolean existsByuserEmail(String userEmail);
 	String findBypassword(String password);
+	
 }

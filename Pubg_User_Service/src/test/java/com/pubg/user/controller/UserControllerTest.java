@@ -54,7 +54,7 @@ class UserControllerTest {
 	@Test
 	void testSignin() throws Exception ,UserAlreadyExistsException{
 
-		UserDetails details=new UserDetails("test","test","986611","12345");
+		UserDetails details=new UserDetails("test","test","986611","12345","hello");
 
 		when(servImpl.save(details)).thenReturn("User saved");
 
@@ -68,9 +68,9 @@ class UserControllerTest {
 
 	@Test
 	void testUpdate() throws Exception,UserAlreadyExistsException {
-		UserDetails details=new UserDetails("raghu@gmail.com","Raghu","986611","12345");
+		UserDetails details=new UserDetails("raghu@gmail.com","Raghu","986611","12345","hello");
 
-		UserDetails detailsNew=new UserDetails("raghu1000@gmail.com","Raghavendra","98661112","1233");
+		UserDetails detailsNew=new UserDetails("raghu1000@gmail.com","Raghavendra","98661112","1233","hello");
 
 		when(servImpl.updateUserDetails(detailsNew)).thenReturn("User updated");
 
@@ -82,7 +82,7 @@ class UserControllerTest {
 
 	@Test
 	void testDeletebyemail() throws UserNotFoundException, JsonProcessingException ,Exception{
-		UserDetails details=new UserDetails("raghu@gmail.com","Raghu","986611","12345");
+		UserDetails details=new UserDetails("raghu@gmail.com","Raghu","986611","12345","hello");
 
 		when(servImpl.deleteByuserEmail("raghu@gmail.com")).thenReturn("User deleted with email "+details.getUserEmail());
 
@@ -93,10 +93,10 @@ class UserControllerTest {
 	void testFindall() throws Exception {
 		List<UserDetails> user=new LinkedList<>();
 
-		user.add(new UserDetails("raghu@gmail.com","Raghu","9866111336","Raghu@1987"));
-		user.add(new UserDetails("venkat@gmail.com","Venkat","123456789","venkat@1128"));
-		user.add(new UserDetails("Madhu@gmail.com","Madhu","987654321","Madhu@1234"));
-		user.add(new UserDetails("Manish@gmail.com","Manish","0192837465","Manish@1567"));
+		user.add(new UserDetails("raghu@gmail.com","Raghu","9866111336","Raghu@1987","hello"));
+		user.add(new UserDetails("venkat@gmail.com","Venkat","123456789","venkat@1128","hello"));
+		user.add(new UserDetails("Madhu@gmail.com","Madhu","987654321","Madhu@1234","hello"));
+		user.add(new UserDetails("Manish@gmail.com","Manish","0192837465","Manish@1567","hello"));
 
 		when(servImpl.findall()).thenReturn(user);
 
@@ -107,7 +107,7 @@ class UserControllerTest {
 
 	@Test
 	void testFindbyemail() throws Exception {
-		UserDetails user=new UserDetails("raghu@gmail.com","Raghu","9866111336","Raghu@1987");
+		UserDetails user=new UserDetails("raghu@gmail.com","Raghu","9866111336","Raghu@1987","hello");
 
 		when(servImpl.findbymail("raghu@gmail.com")).thenReturn(user);
 
@@ -118,7 +118,7 @@ class UserControllerTest {
 	@Test
 	void testCheck() throws Exception {
 
-		UserDetails user=new UserDetails("raghu@gmail.com","Raghu","9866111336","Raghu@1987");
+		UserDetails user=new UserDetails("raghu@gmail.com","Raghu","9866111336","Raghu@1987","hello");
 
 		when(servImpl.check("raghu@gmail.com", "Raghu@1987")).thenReturn(true);
 

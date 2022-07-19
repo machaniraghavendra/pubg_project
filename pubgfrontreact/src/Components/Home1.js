@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Home } from './Home';
 
 function Home1() {
+    useEffect(()=>{localStorage.getItem("Raghu")})
+    if(localStorage.getItem("Raghu")){
     return (
         <div>
             <Home />
@@ -34,6 +36,6 @@ function Home1() {
                 </div>
             </div>
         </div>
-    )
+    )}
 }
 export default Home1;
