@@ -81,7 +81,7 @@ export default function Userpassword() {
 
                 <div className="" id="blur">
                     <Home />
-                    <div className='account'>
+                    <div className='account container-xxl margin-top'>
                         <div style={{ textAlign: "center" }}>
                             <h3 style={{ textAlign: "center", color: "greenyellow" }}>Password edit</h3>
                         </div>

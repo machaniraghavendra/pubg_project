@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Link, Route, Routes, useNavigate } from "react
 
 export function ErrorPage(){
     return(
-        <div >
+        <div className="container-lg">
             <img className="errordiv" src="https://na.battlegrounds.pubg.com/wp-content/themes/regionals/assets/images/new/not-found/404-comp.png"/>
             <h2 className="error">404 - Page Not found :-(</h2>
             <h1 className="info">Didn't logged in yet ?<Link to="/login"> Tap here</Link></h1>

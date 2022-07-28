@@ -18,17 +18,19 @@ public class PlayerServiceImpl implements PlayerService{
 
 	@Override
 	public String save(Players player) throws PlayerAlreadyExistsException {
+		Players play=new Players();
 		try {
 			if(playersRepository.existsById(player.getId()))
 				throw new PlayerAlreadyExistsException("Player already exists");
 			else {
 				Players playerSave=playersRepository.save(player);
-				return "Player with id "+player.getId()+" has been saved!";
+				return player.toString()+" Player with id "+player.getId()+" has been saved!";
 			}
 		} catch (PlayerAlreadyExistsException e) {
 			e.printStackTrace();
 		}
-		return "Player with id "+player.getId()+" is not saved.";
+//		return "Player with id "+player.getId()+" is not saved.";
+		return player.toString()+"Player with id "+player.getId()+" is not saved.";
 	}
 
 	@Override

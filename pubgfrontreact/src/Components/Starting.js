@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Starting() {
     return(
         <div >
-            <img className="logo flow" src="https://na.battlegrounds.pubg.com/wp-content/themes/regionals/assets/images/header/pubg-logo-battlegrounds.png" />
+            <img className="logo flow" style={{width:"10%"}}src="https://na.battlegrounds.pubg.com/wp-content/themes/regionals/assets/images/header/pubg-logo-battlegrounds.png" />
             <Link className="btn  flow buttons btn-primary" to="/login" role="button">Sign-In</Link>
             <Link className="btn buttons flow btn-primary" to="/signup" role="button">Sign-Up</Link>
             <div >

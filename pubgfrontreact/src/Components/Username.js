@@ -64,7 +64,7 @@ export default function Username() {
                     </div> : ""}
                 <div className="" id="blur">
                     <Home />
-                    <div className='account'>
+                    <div className='account container-xxl margin-top'>
                         <div style={{ textAlign: "center" }}>
                             <h3 style={{ textAlign: "center", color: "greenyellow" }}>User Name edit</h3>
                         </div>

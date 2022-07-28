@@ -8,20 +8,18 @@ function Login() {
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
     const nav = useNavigate();
+
     const check = () => {
         axios.get("http://localhost:8083/userservice/" + formValues.userEmail + "/" + formValues.password)
             .then((res) => {
                 setFormValues(res);
                 if (res.data == true) {
-                    {localStorage.setItem("Raghu","raghu")};
-                    if(localStorage.getItem("Raghu"))
-                    {
-                    nav("/pubg");
+                    { localStorage.setItem("Raghu", "raghu") };
+                    if (localStorage.getItem("Raghu")) {
+                        nav("/pubg");
                     }
                 }
-            }).catch(
-                nav("/login")
-            );
+            })
     }
 
     const handleChange = (e) => {
@@ -59,43 +57,58 @@ function Login() {
     };
 
     return (
-        <div>
-            <img className="logo flow" src="https://na.battlegrounds.pubg.com/wp-content/themes/regionals/assets/images/header/pubg-logo-battlegrounds.png" />
-            <Link className="btn buttons flow btn-primary" to="/signup" role="button">Sign up</Link>
-            <Link className="btn buttons flow btn-primary" to="/" role="button">Home</Link>
+        <div className="container-lg" >
+            <nav className="navbar navbar-expand-lg ">
+                <div className="container-fluid">
+                    <img className="img-fluid navbar-brand logo flow" style={{ width: "auto", display: "flex", zIndex: "10" }} src="https://na.battlegrounds.pubg.com/wp-content/themes/regionals/assets/images/header/pubg-logo-battlegrounds.png" />
+                    <button className="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                    </button><br></br><br></br><br></br>
+                    <div className="collapse gap-2 navbar-collapse" id="navbarTogglerDemo02">
+                        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li className="nav-item">
+                                <Link to="/signup" role="button"><button className="btn flow btn-primary me-md-4">Sign Up</button></Link>
+                            </li><br></br>
+                            <li class="nav-item">
+                                <Link to="/" role="button"><button className="btn flow btn-primary ">Home</button></Link>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
             <div className="container formani">
-                {Object.keys(formErrors).length === 0 && isSubmit ? (
-                    <div className="ui message success" style={{ color: "red" }}>Invalid Credentials</div>
-                ) : null}
-
                 <form onSubmit={handleSubmit}>
-                    <h1>Sign-in</h1>
-                    <div className="ui divider"></div>
+                    <h1>Sign-in</h1><br></br>
+                    <div className="ui divider">
+                        {Object.keys(formErrors).length === 0 && isSubmit ? (
+                            <div className="ui message success" style={{ color: "red" }}>Invalid Credentials</div>
+                        ) : null}
+                    </div>
                     <div className="ui form">
-                        <div className="field">
-                            <label className="form-label"
-                                for="form3Example3">Email</label>
+                        <div className="field form-floating mb-3">
                             <input
-                                id="form3Example1" className="form-control"
+                                id="form3Example1  floatingInput" className="form-control"
                                 type="text"
                                 name="userEmail"
                                 placeholder="Email"
                                 value={formValues.userEmail}
                                 onChange={handleChange}
                             />
+                            <label className="form-label"
+                                for="form3Example3 floatingInput" style={{ color: "black" }}>Email</label>
                         </div>
                         <p className="loginerror">{formErrors.userEmail}</p>
-                        <div className="field">
-                            <label className="form-label"
-                                for="form3Example3">Password</label>
+                        <div className="field form-floating mb-3">
                             <input
-                                id="form3Example2" className="form-control"
+                                id="form3Example2 floatingInput" className="form-control"
                                 type="password"
                                 name="password"
                                 placeholder="Password"
                                 value={formValues.password}
                                 onChange={handleChange}
                             />
+                            <label className="form-label"
+                                for="form3Example3 floatingInput" style={{ color: "black" }}>Password</label>
                         </div>
                         <p className="loginerror">{formErrors.password}</p>
                         <div className="d-flex justify-content-center text-center mt-4 pt-1">
@@ -108,6 +121,13 @@ function Login() {
                         <button className="btn btnms button btn-success" onClick={localStorage.getItem("Raghu")}>Login</button>
                     </div>
                 </form>
+            </div>
+            <div className="container-fluid bubble">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     );

@@ -22,7 +22,7 @@ public class FavouriteServiceImpl implements FavouriteService{
 
 	@Autowired
 	RestTemplate restTemplate;
-	
+
 	@Override
 	public ResponseEntity findFavouriteById(String id) throws FavouriteMatchNotAddedYetException{
 		ResponseEntity responseEntity=new ResponseEntity();
@@ -46,7 +46,8 @@ public class FavouriteServiceImpl implements FavouriteService{
 	}
 
 	@Override
-	public String save(FavouriteMatches fmatches) throws FavouriteMatchAlreadyAddedException{
+	public String save(FavouriteMatches fmatches) throws FavouriteMatchAlreadyAddedException
+	{
 		try {
 			if(frepo.existsById(fmatches.getFavouriteId()))
 				throw new FavouriteMatchAlreadyAddedException("The Match already added in favourite list");
@@ -54,12 +55,13 @@ public class FavouriteServiceImpl implements FavouriteService{
 				FavouriteMatches save=frepo.save(fmatches);
 				return "Added to favourite list 🙂";
 			}
+			
 		} catch (FavouriteMatchAlreadyAddedException e) {
 			e.printStackTrace();
 		}
 		return "The Match already added in favourite list";
 	}
-
+	
 	@Override
 	public List<FavouriteMatches> findall()
 	{

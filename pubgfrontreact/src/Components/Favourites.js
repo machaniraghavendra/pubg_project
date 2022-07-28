@@ -60,15 +60,15 @@ export function Favourite() {
                     </div> : ""}
                 <div className="" id="blur">
                     <Home />
-                    <div>
+                    <div className="container-xxl margin-top">
                         <h1 className="title">Favourites</h1>
                         <div className="carousel-item active">
-                            <img src="https://www.tinyquip.com/wp-content/uploads/2018/07/imag1.jpg" className="d-block w-50" />
+                            <img src="https://www.tinyquip.com/wp-content/uploads/2018/07/imag1.jpg" className="d-block w-50 img-fluid src" />
                         </div>
-                        <div className="row1 frow1">
+                        <div className="row1 frow1 table-responsive table-total ">
                             {flist.length == [] ? <span><h2 className="" style={{ color: "white" }}>No Favourites found !</h2></span>
                                 :
-                                <table className="table ftable">
+                                <table className="table-total table ftable">
                                     <thead>
                                         <tr>
                                             <th scope="col">S.No</th>

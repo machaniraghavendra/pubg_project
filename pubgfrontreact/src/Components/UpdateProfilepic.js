@@ -21,7 +21,7 @@ function UpdateProfilepic() {
         var blur = document.getElementById("blur");
         blur.classList.toggle('actives');
     }
-    useEffect(() => { }, []);
+    
     if (localStorage.getItem("Raghu")) {
         return (
             <div>
@@ -61,7 +61,7 @@ function UpdateProfilepic() {
 
                 <div className="" id="blur">
                     <Home />
-                    <div className='profile'>
+                    <div className='profile container-xxl margin-top'>
                         <div className='account'>
                             <div style={{ textAlign: "center" }}>
                                 <h3 style={{ textAlign: "center", color: "greenyellow" }}>Profile Picture edit</h3><br />
