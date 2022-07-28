@@ -124,7 +124,7 @@ function SignUp() {
                             />
                             <label for="floatingInput" style={{ color: "black" }}>Username</label>
                         </div>
-                        <p className="loginerror">{formErrors.userName}</p>
+                        <p className="loginerror" style={{ color: "red" }}>{formErrors.userName}</p>
                         <div class="form-floating mb-3">
                             <input
                                 id="form3Example2" className="form-control"
@@ -136,7 +136,7 @@ function SignUp() {
                             />
                             <label for="floatingInput" style={{ color: "black" }}>Email</label>
                         </div>
-                        <p className="loginerror">{formErrors.userEmail}</p>
+                        <p className="loginerror"  style={{ color: "red" }}>{formErrors.userEmail}</p>
                         <div class="form-floating mb-3">
                             <input
                                 id="form3Example3 floatingInput" className="form-control"
@@ -147,21 +147,24 @@ function SignUp() {
                                 onChange={handleChange}
                             />
                             <label for="floatingInput" style={{ color: "black" }}>Mobile number</label>
+                            <p className="loginerror"  style={{ color: "red" }}>{formErrors.mobileNumber}</p>
                         </div>
-                        <p className="loginerror">{formErrors.mobileNumber}</p>
+                     
                         <div class="form-floating mb-3">
                             <input
                                 id="form3Example4" className="form-control"
                                 type="password"
                                 name="password"
                                 placeholder="Password"
-                                required
+                           
                                 value={formValues.password}
                                 onChange={handleChange}
                             />
                             <label for="floatingInput" style={{ color: "black" }}>Password</label>
+                            
                         </div>
-                        <p className="loginerror">{formErrors.password}</p>
+                        <p className="loginerror"  style={{ color: "red" }}>{formErrors.password}</p>
+                        
                         < div className="d-flex justify-content-center text-center mt-4 pt-1">
                             <a href="https://www.facebook.com/login/" className="text-white"><i className="fab fa-facebook-f fa-lg"></i></a>
                             <a href="https://twitter.com/i/flow/login" className="text-white"><i className="fab fa-twitter fa-lg mx-4 px-2"></i></a>
